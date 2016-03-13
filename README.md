@@ -4,7 +4,7 @@
 **Clone the repo**
 
 ```
-$ git clone git@bitbucket.org:drac89/react-webpack.git
+$ git clone git@bitbucket.org:drac89/weather.git
 $ cd MyApp
 ```
 
