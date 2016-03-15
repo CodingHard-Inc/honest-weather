@@ -8,7 +8,7 @@ const owAPI = {
   key: "3650a8b79ef8781cd7e8d8951e394b2e",
   url: "http://api.openweathermap.org/data/2.5/weather?q=",
   unit: {
-      kelvin: "",
+      kelvin: "&units=metric",
       metric: "&units=metric",
       fahrenheit: "&units=imperial"
   }
@@ -16,6 +16,7 @@ const owAPI = {
 
 
 export default function getWeatherInfo (city) {
-  return axios.get(`${owAPI.url}${city}${owAPI.unit.metric}&appid=${owAPI.key}`);
+  console.log(`${owAPI.url}${city}${owAPI.unit.metric}&APPID=${owAPI.key}`);
+  return axios.get(`${owAPI.url}${city}${owAPI.unit.metric}&APPID=${owAPI.key}`);
 
 }

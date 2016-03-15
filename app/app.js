@@ -29,7 +29,10 @@ class App extends React.Component {
           temp: res.data.main.temp,
           desc: handleDesc(res.data.weather[0].id)
         });
-      }.bind(this));
+      }.bind(this))
+      .catch(function (res) {
+        console.log(res);
+      });
   }
 
 
