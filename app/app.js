@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import getWeatherInfo from './weatherApi'
 import Temperature from './components/temperature'
 import Description from './components/description'
 import handleDesc from './handledesc'
 import style from './style.less'
+
+import storeWeatherInfo from './store'
 
 class App extends React.Component {
   constructor(){
@@ -22,17 +23,11 @@ class App extends React.Component {
   }
 
   init (city) {
-    getWeatherInfo(city)
-      .then(function (res) {
-        console.log(res.data.base);
-        this.setState({
-          temp: res.data.main.temp,
-          desc: handleDesc(res.data.weather[0].id)
-        });
-      }.bind(this))
-      .catch(function (res) {
-        console.log(res);
-      });
+    storeWeatherInfo(city);
+    this.setState({
+      temp: localStorage.getItem('temp'),
+      desc: handleDesc(localStorage.getItem('descID'))
+    });
   }
 
 
