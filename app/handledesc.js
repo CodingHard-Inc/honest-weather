@@ -2,6 +2,7 @@
 
 
 export default function handleDesc (desc) {
+  console.log(desc)
   switch(true) {
     // Group 2xx: Thunderstorm
     case (desc>=200 && desc<=299):
@@ -29,7 +30,7 @@ export default function handleDesc (desc) {
       break;
 
     // Group 800: Clear
-    case 800:
+    case desc==800:
       return "The sky is fuckin' clear."
       break;
 
