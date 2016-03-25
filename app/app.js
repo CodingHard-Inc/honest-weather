@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import City from './components/city'
 import Temperature from './components/temperature'
 import Description from './components/description'
 import handleDesc from './handledesc'
@@ -11,40 +12,48 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      city: 'nicosia',
+      city: 'london',
       temp: null,
       desc: '',
       unit: '°C'
     }
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.init(this.state.city);
+  }
+
+  componentWillUnmount(){
+
   }
 
   init (city) {
     storeWeatherInfo(city);
     this.setState({
+      city: city,
       temp: localStorage.getItem('temp'),
       desc: handleDesc(localStorage.getItem('descID'))
     });
   }
 
 
+  changeCity(newCity) {
+    this.init(newCity)
+  }
+
   render(){
     console.log('rendered')
     return (
-      <div className="container">
-
-        <div className="left-side">
-          <h1 className="city">{this.state.city}</h1>
-          <Description desc={this.state.desc} />
+      <div>
+        <div className="container">
+          <div className="left-side">
+            <City city={this.state.city} changeCity={this.changeCity.bind(this)}/>
+            <Description desc={this.state.desc} />
+          </div>
+          <div className="right-side">
+            <Temperature temp={this.state.temp} unit={this.state.unit}/>
+          </div>
         </div>
-
-        <div className="right-side">
-          <Temperature temp={this.state.temp} unit={this.state.unit}/>
-        </div>
-
       </div>
     )
   }
