@@ -2,24 +2,25 @@ import React from 'react'
 import SearchCity from './searchCity'
 
 class City extends React.Component {
+  // handleSubmit() {
+  //   var newCity = this.newCity.value
+  //   this.newCity.value = ''
+  //   this.props.changeCity(newCity)
+  // }
 
-  handleSubmit() {
-    var newCity = this.newCity.value
-    this.newCity.value = ''
-    this.props.changeCity(newCity)
-  }
+  // setRef(ref) {
+  //   this.newCity = ref
+  // }
 
-  setRef(ref) {
-    this.newCity = ref
+  handleModal(){
+    document.getElementById('changeCityModal').className = "active";
   }
 
   render(){
     return (
       <div>
-        <h1 className="city">{this.props.city}</h1>
-          <input className="searchText" type="text" ref={this.setRef.bind(this)} />
-          <button type="submit" onClick={this.handleSubmit.bind(this)}>asd</button>
-        {/*<SearchCity/>*/}
+        <h1 className="city" onClick={this.handleModal.bind(this)}>{this.props.city}</h1>
+        <SearchCity changeCity={this.props.changeCity}/>
       </div>
     )
   }
