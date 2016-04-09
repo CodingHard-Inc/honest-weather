@@ -5,6 +5,7 @@ import Temperature from './components/temperature'
 import Description from './components/description'
 import handleDesc from './handledesc'
 import style from './style.less'
+import logo from './static/codinghard-logo.png'
 
 import storeWeatherInfo from './store'
 
@@ -54,6 +55,9 @@ class App extends React.Component {
             <Temperature temp={this.state.temp} unit={this.state.unit}/>
           </div>
         </div>
+          <div className="footer">
+            <a href="https://codinghard.com"><img src={logo}/></a>
+          </div>
       </div>
     )
   }

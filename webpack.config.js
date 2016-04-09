@@ -21,7 +21,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'
+        test: /\.(png|jpg|svg)$/, loader: 'url-loader?limit=8192'
       },
       {
         test: /\.less$/, loader: 'style-loader!css-loader!less-loader'
