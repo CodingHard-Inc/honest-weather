@@ -29,7 +29,13 @@ class App extends React.Component {
   }
 
   init (city) {
-    storeWeatherInfo(city);
+    var a = this; // kontrol et.. dogru yapilan yolunu bul!
+    storeWeatherInfo(city, function (){
+      a.setState({
+      city: city,
+      temp: localStorage.getItem('temp'),
+      desc: handleDesc(localStorage.getItem('descID'))
+    })});
     this.setState({
       city: city,
       temp: localStorage.getItem('temp'),
@@ -42,6 +48,13 @@ class App extends React.Component {
     this.init(newCity)
   }
 
+  cityChanged(){
+    this.setState({
+      city: city,
+      temp: localStorage.getItem('temp'),
+      desc: handleDesc(localStorage.getItem('descID'))
+    });
+  }
   render(){
     console.log('rendered')
     return (

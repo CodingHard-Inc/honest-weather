@@ -15,7 +15,7 @@ function isStorageAvailable(type) {
 }
 
 
-export default function storeWeatherInfo(city) {
+export default function storeWeatherInfo(city, handler) {
   if (isStorageAvailable('localStorage')) {
 
       getWeatherInfo(city)
@@ -23,6 +23,7 @@ export default function storeWeatherInfo(city) {
 
           localStorage.temp = res.data.main.temp;
           localStorage.descID = res.data.weather[0].id;
+          handler();
 
         }.bind(this))
         .catch(function (res) {
