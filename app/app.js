@@ -24,14 +24,10 @@ class App extends React.Component {
     this.init(this.state.city);
   }
 
-  componentWillUnmount(){
-
-  }
-
   init (city) {
-    var a = this; // kontrol et.. dogru yapilan yolunu bul!
+    let that = this;
     storeWeatherInfo(city, function (){
-      a.setState({
+      that.setState({
       city: city,
       temp: localStorage.getItem('temp'),
       desc: handleDesc(localStorage.getItem('descID'))
