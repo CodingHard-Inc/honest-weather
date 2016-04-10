@@ -1,11 +1,12 @@
 {
-  "name": "weatherapp",
-  "version": "0.0.1",
-  "description": "POC immutablejs weather web app",
+  "name": "honest-weather",
+  "version": "0.1.0",
+  "description": "Honest and abusive weather web app.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack -p"
   },
   "author": "drac",
   "license": "ISC",

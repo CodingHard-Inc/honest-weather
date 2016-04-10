@@ -4,7 +4,7 @@
 **Clone the repo**
 
 ```
-$ git clone git@bitbucket.org:drac89/weather.git
+$ git clone git@bitbucket.org:drac89/react-webpack.git
 $ cd MyApp
 ```
 
@@ -22,9 +22,9 @@ $ npm start
 
 ## Build Package for Production
 
-For building once for production (minification).
-Builds into `public/`
+For building once for production (via minification).
+Builds into `public/` as `bundle.js`
 
 ```
-$ npm build
+$ npm run build
 ```
