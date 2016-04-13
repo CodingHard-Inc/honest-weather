@@ -4,8 +4,8 @@
 **Clone the repo**
 
 ```
-$ git clone git@bitbucket.org:drac89/react-webpack.git
-$ cd MyApp
+$ git clone git@github.com:CodingHard-Inc/honest-weather.git
+$ cd honest-weather
 ```
 
 **Install dependencies**
@@ -22,9 +22,11 @@ $ npm start
 
 ## Build Package for Production
 
-For building once for production (via minification).
-Builds into `public/` as `bundle.js`
+Build once for production. (minified)
 
 ```
 $ npm run build
 ```
+
+*ps: Builds into `public/` as `bundle.js`*
+
