@@ -1,14 +1,14 @@
 module.exports = {
   entry: "./app/app.js",
   output: {
-    path: './public',
+    path: './',
     filename: "bundle.js",
     publicPath: '/'
   },
   // webpack-dev-server config for refreshing and more
   devServer: {
     inline: true,
-    contentBase: './public',
+    contentBase: './',
   },
   module: {
     loaders: [
