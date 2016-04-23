@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchCity from './searchCity'
+import iSearch from '../static/i_search.png'
 
 class City extends React.Component {
   // handleSubmit() {
@@ -19,7 +20,10 @@ class City extends React.Component {
   render(){
     return (
       <div>
-        <h1 className="city" onClick={this.handleModal.bind(this)}>{this.props.city}</h1>
+        <h1 className="city" onClick={this.handleModal.bind(this)}>
+	  {this.props.city}
+          <img className="search-icon" src={iSearch}/>
+	</h1>
         <SearchCity changeCity={this.props.changeCity}/>
       </div>
     )
